@@ -1,5 +1,10 @@
 ### Hi there 👋
 
+
+🔭 I’m currently working on Electronics, Embedded Systems & Information Security
+
+📫 Reach me at kachatzis @ auth.gr
+
 <!--
 **kostascc/kostascc** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
