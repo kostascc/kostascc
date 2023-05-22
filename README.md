@@ -3,6 +3,8 @@
 
 🔭 I’m currently working on Electronics, Embedded Systems & Information Security
 
+⚡ See my additional projects on gitlab.com/kostascc
+
 📫 Reach me at kachatzis @ ece.auth.gr
 
 <!--
