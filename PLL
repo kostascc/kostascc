@@ -1,0 +1,130 @@
+\chapter{Σύστημα κλειδώματος φάσης}
+
+
+Phase Lock Loop (PLL) is a control system used in electronics applications such as communication, frequency synthesizers, and microprocessors. It maintains the same phase between input and output signals by using a phase detector, low pass filter, and voltage control oscillator.
+
+Phase lock loops are widely used in computing and communication applications. Notable examples include 
+FM demodulation, frequency shift keying, clock recovery/generation for digital systems, noise reduction, frequency synthesizers. 
+A typical PLL topology consists of a phase detector, a low pass filter, and a voltage control oscillator .
+The phase detector compares input and oscillator frequency to generate an error signal.
+XOR gate and phase frequency detector can be used as phase detectors.
+XOR phase detector has limitations, while the phase frequency detector provides better performance.
+PLL can multiply or divide input frequency using a divide by N counter in the feedback loop.
+
+Phase lock loops are essential in various electronic applications, enabling synchronization, demodulation, clock recovery, and noise reduction.
+The three main components of a PLL are the phase detector, low pass filter, and voltage control oscillator.
+The phase detector compares the phase difference between input and oscillator signals, generating an error signal used to adjust the oscillator frequency.
+XOR gate can be used as a phase detector, but it has limitations in terms of phase range and signal duty cycle.
+Phase frequency detectors, using D-flip flops and AND gates, provide better phase detection and can identify leading or lagging signals.
+PLLs can be used in frequency synthesizers to multiply or divide input frequencies by a factor of N, achieved by introducing a divide by N counter in the feedback loop.
+Understanding the working principles and applications of PLLs is crucial for electronic engineers and enthusiasts to design and optimize electronic systems.
+
+
+\section{Σχεδίαση κλειστού βρόχου}
+
+While targeting certain performance specifications, we are primarily interested in how the design
+proceeds, what aspects of the circuit must be analyzed and simulated, and, most importantly, how the designer
+thinks. This endeavor also gives us a feel for the performance bounds that we would typically encounter in
+practice. Not every design choice leads to success, and we must often iterate on the values or
+even circuit topologies.
+
+\begin{figure}
+	\centering
+	\rotatebox{90}{
+		\begin{minipage}{\textheight}
+			\centering
+			\includegraphics[width=1\textwidth]{\ChapterPath/assets/39GHz_PLL_design} 
+			\vspace{20pt}
+			\caption{\label{fig:PLL_39GHz_design} Λογικό διάγραμμα υβριδικού PLL με είσοδο περίπου 50 MHz και έξοδο στο εύρος 36-42 GHz.} 
+		\end{minipage}
+	}
+\end{figure}
+
+In context of this thesis, our design targets are as follows:
+\begin{itemize}
+\item Reference Frequency = 20 MHz,
+\item Output Frequency = 2.4 GHz,
+\item Power Consumption = 2 mW,
+\item Deterministic Jitter = 10 ps,pp,
+\item Random Jitter = 2 ps,rms,
+\item Supply Voltage = 1 V.
+\end{itemize}
+
+We observe that the loop has a divide ratio of M = 120. The reader is encouraged to review Chapters 3 and
+7 before beginning this design study.
+
+A key point in circuit design is to begin with the simplest topology and the smallest transistors unless our
+experience suggests otherwise. We therefore start with a standard charge-pump PLL.
+
+To choose loop parameters, we seek a method that readily leads to a basic design, anticipating
+that we must perform refinements later. 
+
+\begin{figure}[h]
+	\begin{centering}
+		\includegraphics[width=0.8\textwidth]{\ChapterPath/assets/pll_closed_loop_functions}
+		\par\end{centering}
+	\caption{\label{fig:PLL_closed_loop_functions} .}
+\end{figure}
+
+While the proof is ommited in this paper, the close loop transfer function of Diagram \ref{fig:PLL_closed_loop_functions} is:
+\begin{align}
+	H(s) &= \frac{K_{PD} K_{VCO}}{ \frac{s^2}{\omega_{LPF}} + s  + K_{PD} K_{VCO} } \label{eq:PLL_close_loop_func} \\
+	        &= \frac{ \omega _n ^2 }{ s^2 + 2\zeta \omega_n s + \omega_n^2 } \text{\space} . \label{eq:PLL_close_loop_func_universal}	
+\end{align}
+
+The two equations derived in Chapter 7 for type-II PLLs provide a
+starting point:
+
+
+\begin{align}
+\zeta &= \frac{R_1}{2} \sqrt{ \frac{I_p K_{VCO} C_1}{2 \pi M} } \text{\space} , \label{eq:PLL_1} \\	
+\omega _n &=  \sqrt{ \frac{I_p K_{VCO} }{2 \pi M C_1} } \text{\space} , \label{eq:PLL_2} 
+\end{align}
+where $K_{VCO}$ is the VCO gain, and $I_p$, $C_1$, $R_1$ are under our control.
+We choose ζ ≈ 1, but how about ωn? Recall from Chapter 8 that the discrete-time nature of the loop requires that
+the bandwidth (BW) be reduced to about one-tenth of the input (reference) frequency. But which bandwidth?
+More relevant here is the open-loop unity-gain BW, ωu ≈ 2.1ωn for ζ = 1.
+\begin{align}
+	\omega _u = 2.1 \omega _n = \omega_{REF}/10 \text{\space} . \label{eq:PLL_3} 
+\end{align}
+ 
+ 
+ We now have two equations and three unknowns, and hence some freedom in the choice of the loop
+ parameters. The charge pump current, in particular, can assume a wide range, with the lower bound governed
+ by the charge pump noise (Chapter 8) and the size of the loop filter capacitor (because ζ ∝ ²IpC1). Let
+ us select Ip = 100 μA. Note that the CP power consumption is typically quite small because, in the locked
+ condition, Ip is drawn from the supply for only a brief amount of time, namely, the PFD reset time.
+ 
+ from (\ref{eq:PLL_2}) and (\ref{eq:PLL_3}):
+ \begin{align}
+ 	2.1 \sqrt{ \frac{I_p K_{VCO}}{2 \pi M C_1} } = \frac{ 2 \pi \cdot (20 \text{\space MHz}) }{10} \label{eq:PLL_4} 
+ \end{align}
+ 
+The discrete tuning plots in Fig. 3.42(c) yield KV CO ≈ 400 MHz/V. Bearing in mind that KV CO must be
+expressed in radians/s/V, KV CO ≈ 2π × (400) Mrad/s/V, and withM = 120, we obtain
+
+\begin{align}
+	C_1 = 9.3 \text{\space pF \space} .\label{eq:PLL_5} 
+\end{align}
+
+Equating (\ref{eq:PLL_1}) to unity gives
+
+\begin{align}
+	R_1 = 35.9 \text{\space k } \omega \text{\space} . \label{eq:PLL_6} 
+\end{align}
+
+We can also select 
+\begin{align}
+	C_2 \approx C_1 / 5 \approx 1.86 \text{\space pF \space} . \label{eq:PLL_7} 
+\end{align}
+
+
+\section{Υβριδικό κλείδωμα φάσης}
+
+
+
+
+
+
+
+\section{Ανακεφαλαίωση}
