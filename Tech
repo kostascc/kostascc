@@ -1,0 +1,701 @@
+\chapter{Η Τεχνολογία 22FDX}
+
+
+%Semiconductor technology has become vital in almost all areas from consumer electronics such as personal
+%computers (PC), smartphones, tablets, to enterprise applications such as servers, networks, healthcare,
+%finance, and security. The worldwide semiconductor revenue is estimated to be \$333 billion in 2014
+%according to the Semiconductor Industry Association (SIA)\cite{cheng_2016_fully}. The recent surge of Internet-of-things
+%(IoT) is the new driving force to fuel the further growth of semiconductor technology that is largely
+%built on the seemingly endless advance of CMOS technology. 
+
+Η τεχνολογία των ημιαγωγών έχει καταστεί ζωτικής σημασίας σε όλους σχεδόν τους τομείς, από τα ηλεκτρονικά είδη ευρείας κατανάλωσης (π.χ. προσωπικοί υπολογιστές, \textenglish{smartphones, tablets}), έως τις επιχειρηματικές εφαρμογές (π.χ. δίκτυα, υγειονομική περίθαλψη,
+οικονομία, ασφάλεια). 
+Τα έσοδα παγκοσμίως από ημιαγωγούς εκτιμάται ότι ανήλθαν σε 333 δισ. δολάρια το 2014
+σύμφωνα με την Ένωση Βιομηχανίας Ημιαγωγών (SIA)\cite{cheng_2016_fully}. Το πρόσφατο κύμα του Διαδικτύου των Πραγμάτων (IoT) είναι η νέα κινητήρια δύναμη που τροφοδοτεί την περαιτέρω ανάπτυξη της τεχνολογίας ημιαγωγών, βασιζόμενη κυρίως στην φαινομενικά σημαντική πρόοδο της τεχνολογίας CMOS. 
+
+
+%The primary mission of CMOS scaling is
+%to provide smaller and faster transistors from one node to the next, best described by Moore’s Law.
+%Historically CMOS technology advanced to next node every 1.5–2 years. It has become clear that such a
+%node advancement has slowed down to about 2.5–3 years in recent years. The slowdown is partly due to
+%the inherent challenges in manufacturing and yielding 3D FinFET, and partly due to the increasing
+%design and patterning difficulties with shrinking ground rules. 
+
+Σημαντικότερη αποστολή της ανάπτυξης των CMOS τοπολογιών είναι
+η παροχή μικρότερων και ταχύτερων τρανζίστορ, όπως άλλωστε απαιτεί και ο νόμος του Moore.
+Ιστορικά, η τεχνολογία CMOS αναπτυσσόταν ανά 1,5-2 χρόνια. Έχει καταστεί σαφές τα τελευταία χρόνια, ότι μια επιβράδυνση της τάξεως 2,5-3 χρόνων ανά τεχνολογία είναι απαραίτητη. Η επιβράδυνση αυτή οφείλεται εν μέρει σε
+τις εγγενείς προκλήσεις στην κατασκευή και παραγωγή 3D FinFET, και εν μέρει λόγω της αυξανόμενης
+δυσκολίας σχεδίασης και διαμόρφωσης στις μικρότερες και πιο συμπαγείς τοπολογίες. 
+
+
+
+%Mainstream CMOS devices have been
+%fabricated on bulk silicon substrates owing to the universal availability and low cost of bulk silicon
+%wafers. Unfortunately, scaling bulk CMOS transistors beyond 22 nm node face tremendous
+%challenges, particularly for low-power applications.
+%According to Dennard’s scaling theory, which
+%prescribes the recipe for the transistor miniaturization, the channel doping (or halo doping) concentration
+%has to increase to suppress the short-channel effects due to gate length scaling. Unfortunately, increasing
+%halo doping causes two major issues: First, high doping concentration leads to the increase of the electrical
+%field across the PN junction and thus the increase of the gate-induced-drain-leakage (GIDL) current due
+%to enhanced band-to-band tunneling. The total transistor leakage current may go up when the increase
+%of gate-induced-drain-leakage current outweighs the reduction of subthreshold leakage. Second, increasing channel/halo doping
+%increases device variability due to increased random dopant fluctuations.
+
+Η τυπική CMOS τεχνολογία 
+κατασκευάζεται σε υποστρώματα πυριτίου, κυρίως λόγω διαθεσιμότητας και χαμηλού κόστους
+πλακιδίων πυριτίου. Δυστυχώς, η συρρίκνωση CMOS πέραν των 22 nm αντιμετωπίζει σημαντικές
+προκλήσεις, ιδίως για εφαρμογές χαμηλής ισχύος.
+Σύμφωνα με τη θεωρία του Dennard, η οποία
+προδιαγράφει τη σμίκρυνση του τρανζίστορ, η πυκνότητα πρόσμιξης καναλιού
+οφείλει να αυξηθεί για να καταστείλει τα φαινόμενα βραχέως καναλιού (short-channel effects), που οφείλονται στην συρρίκνωση του μήκους πύλης. 
+
+Η αύξηση, ωστόσο, της πρόσμιξης προκαλεί δύο σημαντικά προβλήματα: 
+\begin{itemize}
+	\item Ενισχύει το ηλεκτρικό
+	πεδίο κατά μήκος της επαφής PN και, συνεπώς, αυξάνει το ρεύμα διαρροής που προκαλείται από την πύλη. Το συνολικό ρεύμα διαρροής μπορεί να αυξηθεί όταν η αύξηση διαρροής λόγω πύλης-εκροής γίνει σημαντικότερη της μείωσης διαρροής κάτω από το κατώφλι (subthresold leakage).
+	\item Ενισχύει τη μεταβλητότητα της διάταξης λόγω τυχαίων διακυμάνσεων στις προσμίξεις.
+\end{itemize}
+
+
+%Fully depleted SOI (FDSOI) is a viable device architecture to continue CMOS scaling without relying
+%on channel or halo doping. In fact, the channel of FDSOI transistors is typically undoped
+%to eliminate the random dopant fluctuations while achieving superior short-channel control when SOI channel thickness is about
+%1/4 of the gate length. gate-induced-drain-leakage leakage current is also minimized thanks to the reduced electrical field across
+%the PN junction.
+
+Το SOI με πλήρως `εξαντλημένο' κανάλι (Fully Depleted Silicon Oxide Insulator - FD-SOI) είναι μια βιώσιμη αρχιτεκτονική για τη συρρίκνωσης του CMOS χωρίς να βασίζεται σε
+σε επιπλέον προσμίξεις. Έτσι, το κανάλι του FD-SOI δεν περιέχει προσμίξεις, 
+εξαλείφοντας τυχαίες διακυμάνσεις, ενώ επιτυγχάνεται καλύτερος έλεγχος βραχέων καναλιών όταν το πάχος του καναλιού είναι περίπου 1/4 του μήκους πύλης. 
+Το ρεύμα διαρροής λόγω πύλης ελαχιστοποιείται, επίσης, χάρη στο μειωμένο ηλεκτρικό πεδίο κατά μήκος της επαφής PN.
+
+
+%In reality, to render FDSOI a viable technology, however,
+%the actual SOI thickness needs to be substantially thin to achieve good electrostatics. A rule of thumb is
+%that the FDSOI channel thickness needs to be about 1/4 of the gate length.
+%In addition to the superior electrostatics, inherent
+%low device variability, the planar structure of FDSOI avoids the additional manufacturing challenges
+%associated with the 3D device architectures such as fins and nanowires.
+
+
+
+\begin{figure}[h]
+	\begin{centering}
+		\includegraphics[width=1\textwidth]{\ChapterPath/assets/FDSOI-FinFet_Economics}
+		\par\end{centering}
+	\caption{\label{fig:TECH_FDSOI_FinFet_Economics} .}
+\end{figure}
+
+%Higher cost of SOI substrates than bulk Si substrates is another commonly cited reason for rejecting
+%FDSOI technology. Typically the price difference between a 300 mm SOI and bulk Si wafers is about
+%\$300 which was significant for old technology nodes with relatively low design and chip manufacturing
+%costs. However, both design and chip manufacturing costs have kept increasing from node to node while
+%the price of Si wafer remains flat or even decreases slightly, the price delta between FDSOI and bulk
+%Si wafers becomes less and less significant as illustrated in Figure \ref{fig:TECH_FDSOI_FinFet_Economics}. 
+
+Το υψηλότερο κόστος των υποστρωμάτων SOI σε σχέση με τα τυπικά υποστρώματα πυριτίου (Si) είναι ένας από τους συνήθης λόγους για την απόρριψη της FD-SOI. 
+Συνήθως η διαφορά τιμής μεταξύ ενός πλακιδίου SOI 300 mm και ενός πλακιδίου Si είναι περίπου
+\$300, σημαντική ιδιαιτέρως για παλαιότερες τεχνολογίες με σχετικά χαμηλό κόστος σχεδιασμού και κατασκευής ολοκληρωμένων.
+Ωστόσο, τόσο το αυξανόμενο κόστος σχεδιασμού και κατασκευής, με σταθερή ή και ελαφρώς μειωνώμενη
+τιμή του πλακιδίου Si, έχει ως αποτέλεσμα η διαφορά κόστους κατασκευής υποστρωμάτων FDSOI και bulk
+Si να γίνεται όλο και λιγότερο σημαντική, όπως φαίνεται στο Σχήμα \ref{fig:TECH_FDSOI_FinFet_Economics}. 
+Η αύξηση του κόστους σχεδιασμού και κατασκευής ολοκληρωμένων προέρχεται από την αυξανόμενη πολυπλοκότητα των κυκλωμάτων. 
+
+
+Στο παρόν κεφάλαιο γίνεται μια σύντομη εισαγωγή συγκεκριμένα στην τεχνολογία 22nm της \textenglish{Global Foundries},
+22FDX, η οποία αν και παρουσιάζεται ως μια διόλου φθηνή λύση, υπόσχεται την ώθηση των ορίων διαφόρων διατάξεων σε ευρυζωνικά και υψίσυχνα κυκλώματα.
+Η 22FDX θα χρησιμοποιηθεί στα επόμενα κεφάλαια για την σχεδίαση και προσομοίωση διατάξεων της πρόσφατης βιβλιογραφίας γύρω από τα συστήματα κλειδώματος φάσης.
+
+
+
+\section{Τρανζίστορ}
+
+%At a high level FDSOI device design is not different from the conventional CMOS design in which the
+%primary goal is to achieve the optimal tradeoff among three competing factors, performance, power, and
+%density.
+
+Σε υψηλό επίπεδο, ο σχεδιασμός διατάξεων σε FD-SOI δεν διαφέρει ιδιαίτερα από τον συμβατικό σχεδιασμό CMOS, στον οποίο οι
+πρωταρχικός στόχος είναι να επιτευχθεί η βέλτιστη αντιστάθμιση μεταξύ τριών ανταγωνιστικών παραγόντων: απόδοσης, ισχύος και
+επιφάνειας ολοκλήρωσης.
+H σχεδίαση σε τεχνολογία FD-SOI ουσιαστικά προσθέτει
+τη βελτιωμένη απομόνωση από το υπόστρωμα. Το αγώγιμο κανάλι FET κάτω από το
+πολυπυρίτιο της πύλης διαχωρίζεται από το πηγάδι (ή υπόστρωμα) με λεπτή στρώση
+ οξειδίου (Burried Oxide ή BOX). Αυτό επιτρέπει τον πλήρη έλεγχο του καναλιού και
+ μειώνει τη χωρητικότητα υποδοχής και πηγής. Επίσης, δίνει τη δυνατότητα ελέγχου του 
+ δυναμικού κατωφλίου ($V_{t}$) ως:
+\begin{itemize}
+\item NMOS σε N-Well (ή Flip Well) με χρήση κελιών slvtnfet για χαμηλό $V_{t}$,
+\item PMOS σε P-Well (ή Flip Well) με χρήση κελιών slvtpfet για χαμηλό $V_{t}$,
+\item NMOS σε P-Well (ή Conventional Well) με χρήση κελιών nfet/lvtnfet για χαμηλή διαρροή,
+\item PMOS σε Ν-Well (ή Conventional Well) με χρήση κελιών pfet/lvtpfet για χαμηλή διαρροή.
+\end{itemize}
+Στις δυο πρώτες περιπτώσεις χρησιμοποιείται Forward Gate Bias για να μειωθεί το $V_{t}$,
+ενώ στις τελευταίες η χρήση πηγαδιού γίνεται όπως και σε τεχνολογίες Bulk CMOS με 
+Reverse Gate Bias για αύξηση του $V_{t}$.
+
+
+%The lower $V_t$ translates to higher over drive ($V_{gs} − V_t$ ) and thus higher drive current, as indicated by
+%Eqs. (\ref{eq:TECH_Id1}) - (\ref{eq:TECH_Id2}). Alternatively, one can tradeoff the drive current with power
+%consumption. In other words, FDSOI can provide the same drive current at lower $V_{DD}$, resulting in
+%reduction in both active power (proportional to $V^2_{DD}$) and standby power (proportional to $V_{DD}$).
+
+Το χαμηλότερο $V_t$ μεταφράζεται σε υψηλότερη υπεροδήγηση ($V_{gs} - V_t$ ) και συνεπώς σε υψηλότερο ρεύμα $I_d$, όπως υποδεικνύεται από τις ισότητες (\ref{eq:TECH_Id1}) - (\ref{eq:TECH_Id2}). Εναλλακτικά, μπορεί κανείς να αντισταθμίσει το ρεύμα οδήγησης για καταναλισκόμενη ισχύ. Με άλλα λόγια, το FDSOI μπορεί να παρέχει το ίδιο ρεύμα οδήγησης σε χαμηλότερο $V_{DD}$, με αποτέλεσμα
+μείωση τόσο της ενεργού ισχύος (ανάλογη της $V^2_{DD}$) όσο και της ισχύος αναμονής (ανάλογη της $V_{DD}$).
+
+\begin{align}
+	I_d & \propto C_{inv}  (V_{gs}-V_{t})  v \text{\space}, \label{eq:TECH_Id1} \\
+	V_t & = SS \cdot log\left( I_{REF} / I_{OFF} \right) = a \cdot SS \text{\space}, \label{eq:TECH_Vt1} 
+\end{align}
+ή
+\begin{align}
+	I_d & \propto C_{inv}  \left( V_{gs} - a\cdot SS \right) v \text{\space}, \label{eq:TECH_Id2}
+\end{align}
+%where $I_d$ is the saturation drive current, $C_{inv}$ is the inversion capacitance, v is the effective carrier
+%velocity, $I_{REF}$ is the drain current at $V_{gs} = V_t$ , and $a = log\left(I_{REF}/I_{OFF}\right)$.
+%For a given $I_{OFF}$ target, FD-SOI has lower threshold voltage ($V_t$) and thus provides higher overdrive
+%($V_{gs} − V_t$) and higher drive current ($I_d$).
+όπου $I_d$ είναι το ρεύμα οδήγησης κορεσμού, $C_{inv}$ είναι η χωρητικότητα αντιστροφέα, $v$ είναι η πραγματική
+ταχύτητα φορέα, $I_{REF}$ είναι το ρεύμα πόλωσης σε κατάσταση $V_{gs} = V_t$ , και $a = log\left(I_{REF}/I_{OFF}\right)$.
+Για ένα δεδομένο στόχο $I_{OFF}$, το FD-SOI έχει χαμηλότερη τάση κατωφλίου ($V_t$) και συνεπώς παρέχει υψηλότερη υπεροδήγηση
+($V_{gs} - V_t$) και ρεύμα ($I_d$).
+
+
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.6\textwidth]{\ChapterPath/assets/conv_well_crosssection}
+		\par\end{centering}
+	\caption{\label{fig:TECH_conv_well_crosssection} Τομή τρανζίστορ Conventional Well.}
+\end{figure}
+
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.6\textwidth]{\ChapterPath/assets/flip_well_crosssection}
+		\par\end{centering}
+	\caption{\label{fig:TECH_flip_well_crosssection} Τομή τρανζίστορ Flip Well.}
+\end{figure}
+
+Η συγκεκριμένη τεχνολογία προσφέρει επίσης βελτιωμένη κινητικότητα στο κανάλι, 
+μικρότερη εξάρτηση από φαινόμενα της διάταξης \footnote{
+Ως φαινόμενα εξαρτώμενα της διάταξης (Layout-Dependent Effects) χαρακτηρίζουμε τις
+μεταβολές στα χαρακτηριστικά των τρανζίστορ λόγω της τοποθέτησής του στο χώρο.
+Ένα σύνηθες παράδειγμα LDE αποτελεί η θέση του στοιχείου μέσα σε πηγάδι: τρανζίστορ που βρίσκονται
+κοντά στις άκρες του πηγαδιού παρουσιάζουν υψηλότερο κατώφλι λόγω ιόντων doping που χτυπούν 
+στο διαχωριστικό τοίχος του.
+} (Layout-Dependent Effects) και καλύτερη αντιστοίχιση (matching) στοιχείων, όλα αυτά
+λόγω της αποφυγής των προσμίξεων στο κανάλι.
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=1\textwidth]{\ChapterPath/assets/bulk_leakage_crosssection}
+		\par\end{centering}
+	\caption{\label{fig:TECH_bulk_leakage_crossection}Εγκάρσια τομή (α) Bulk CMOS και (β) FD-SOI. Η στρώση BOX στη τελευταία μειώνει το ρεύμα διαρροής του τρανζίστορ.}
+\end{figure}
+Παρατηρούνται, επίσης, λιγότερα ηλεκτροστατικά φαινόμενα καθώς η ηλεκτρική ζεύξη μεταξύ υποδοχής και
+πηγής συμβαίνει μόνο στο πολύ λεπτό κανάλι πυριτίου. Αυτό έχει ως αποτέλεσμα 
+αύξηση της διαγωγιμότητας $g_m$, μείωση της αγωγιμότητας υποδοχής $g_{ds}$ και ελάττωση του φαινομένου καναλιού.
+Στον Πίνακα \ref{tab:TECH_22fdx_vs_28bulk} παρουσιάζονται περιληπτικά οι διαφορές στα χαρακτηριστικά της 22FDX σε σύγκριση με την αντίστοιχη 28nm bulk CMOS τεχνολογία της Global Foundries. 
+
+
+\begin{table}[h]
+	\centering
+	\caption{Σύγκριση nfet 22FDX και 28SLP (bulk CMOS).}
+	\label{tab:TECH_22fdx_vs_28bulk}
+	\begin{tabular}{ccccc}
+		\toprule
+		\addlinespace[3pt]
+		& 22FDX & 22FDX & 28SLP & 28SLP \\ 
+		\addlinespace[2pt]
+		\midrule
+		\addlinespace[2pt]
+		\addlinespace[5pt]
+		 VDD $[\text{V}]$ & $0.8$ & $0.8$ & $1.0$& $1.0$ \\
+		 Size $[\text{um}]$ & $1/0.02$ & $10/0.02$ & $1/0.032$ & $10/0.032$  \\
+		$g_m [\text{S}]$& $1.78$ & $17.7$ & $1.43$ & $14.4$  \\ 
+		$c_{gs} [\text{fF}]$ & $0.82$ & $7.95$ & $1.01$ & $9.73$ \\
+		$F_T [\text{THz}]$ & $2.17$ & $2.22$ & $1.41$ & $1.48$  \\
+		\addlinespace[4pt]
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+
+\section{Πόλωση υποστρώματος}
+
+Όπως προαναφέρθηκε, η ιδιαιτερότητα της 22FDX προέρχεται κυρίως από τη δυνατότητα τυπικής και ανάστροφης πόλωσης του υποστρώματος. Η ρύθμιση αυτή μας δίνει τη δυνατότητα να μεταβάλουμε τo δυναμικό κατωφλίου $V_{t}$ ανάλογως της επιθυμητής λειτουργίας του κυκλώματος. Σημειώνεται, επίσης, ότι η πόλωση αυτή του υποστρώματος μπορεί να γίνει είτε στατικά είτε δυναμικά, δηλαδή με εφαρμογή σταθερούς δυναμικού τροφοδοσίας ή σήματος αντίστοιχα.
+
+\begin{figure}[h]
+	\begin{centering}
+		\includegraphics[width=0.82\textwidth]{\ChapterPath/assets/body_bias_adv_1a}
+		\par\end{centering}
+	\caption{\label{fig:TECH_bias_adv_1a}Τυπική πόλωση NFET σε bulk CMOS τεχνολογία.}
+\end{figure}
+
+Ως μέτρο σύγκρισης, γίνεται αρχικά ανάλυση της πόλωσης απλού NFET σε bulk CMOS τεχνολογία του σχήματος \ref{fig:TECH_bias_adv_1a}. Το τρανζίστορ χτίζεται μέσα σε PWELL, το οποίο με τη σειρά του βρίσκεται σε DNWELL (Deep N-Well) μέσα στο υπόστρωμα (PSUB). Το δυναμικό του τελευταίου μπορεί να θεωρηθεί ως γείωση κατά την ανάλυση των κυκλωμάτων. 
+Κατά τη σχεδίαση ενός κυκλώματος, ιδιαιτέρως όταν γίνεται χρήση περίπλοκης τεχνολογίας με DNWELLs, είναι βοηθητική η χρήση θεωρητικών διόδων στις επαφές PN. Όπως θα δούμε παρακάτω, η προσέγγιση αυτή μας δίνει μια καλή ιδέα για τις πηγές θορύβου, και μπορεί να προφυλάξει από διάσπαση του τρανζίστορ. 
+
+Από το πηγάδι PWELL δημιουργούνται δίοδοι με κάθοδο το N κανάλι υποδοχής και πηγής. 
+Εδώ γίνεται αντιληπτό ότι η πόλωση του bulk CMOS, δηλαδή το δυναμικό που μπορεί να εφαρμοστεί στο απομονωμένο PWELL ή ακόμη και στο DNWELL, περιορίζεται άμεσα από το δυναμικό υποδοχής και πηγής λόγω των διόδων που δημιουργούνται. Δηλαδή το δυναμικό του PWELL δεν μπορεί να είναι ποτέ μεγαλύτερο της υποδοχής ή της πηγής.
+
+
+\begin{figure}[h]
+	\begin{centering}
+		\includegraphics[width=0.74\textwidth]{\ChapterPath/assets/body_bias_adv_1}
+		\par\end{centering}
+	\caption{\label{fig:TECH_bias_adv_1}Τυπική πόλωση NFET σε FD-SOI τεχνολογία.}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{centering}
+		\includegraphics[width=0.55\textwidth]{\ChapterPath/assets/body_bias_adv_2a}
+		\par\end{centering}
+	\caption{\label{fig:TECH_bias_adv_2a}Τυπική PFET και ανάστροφη NFET πόλωση στην τεχνολογία 22FDX.}
+\end{figure}
+
+Αντίστοιχα, στη περίπτωση του NFET σε FD-SOI του σχήματος \ref{fig:TECH_bias_adv_1} οι προηγούμενες δίοδοι πλέον αποκόπτονται λόγω του BOX (στρώση οξειδίου) και δίνεται η δυνατότητα ευρείας ρύθμισης του δυναμικού στο PWELL. 
+Αναλυτικά, στο Σχήμα \ref{fig:TECH_bias_adv_2a} παρουσιάζεται ένα PFET σε NWELL ως τυπική πόλωση ή NFET σε NWELL ως ανάστροφη πόλωση. Στις δυο αυτές περιπτώσεις, δημιουργείται μόνο μια δίοδος από το γειωμένο υπόστρωμα PSUB στο DNWELL.
+
+\begin{figure}[h]
+	\begin{centering}
+		\includegraphics[width=0.63\textwidth]{\ChapterPath/assets/body_bias_adv_2b}
+		\par\end{centering}
+	\caption{\label{fig:TECH_bias_adv_2b}Τυπική NFET και ανάστροφη PFET πόλωση στην τεχνολογία 22FDX.}
+\end{figure}
+
+Στην περίπτωση του σχήματος \ref{fig:TECH_bias_adv_2b} παρουσιάζεται η τομή NFET σε PWELL με τυπική πόλωση ή PFET σε PWELL με ανάστροφη πόλωση. Εδώ δημιουργείται επιπλέον δίοδος από το PWELL στο DNWELL.
+Και στις δυο περιπτώσεις οφείλει να συγκρατηθεί το δυναμικό DNWELL υψηλότερο του υποστρώματος PSUB, αλλά οι δίοδοι να παραμείνουν σε αποκοπή, δηλαδή πριν προκληθεί ορθή πόλωση στις διόδους.
+
+\begin{figure}[h]
+	\begin{centering}
+		\includegraphics[width=0.57\textwidth]{\ChapterPath/assets/flipwell_nfet-pfet}
+		\par\end{centering}
+	\caption{\label{fig:TECH_bias_adv_3a} Πόλωση στοιχείου N-καναλιού σε NWELL και P-καναλιού σε PWELL, δηλαδή Flip Well συσκευών.}
+\end{figure}
+
+Συνοπτικά, για ευθεία πόλωση σώματος (Forward Body Bias), δηλαδή Flip Well, το NWELL πολώνεται ανώτερα της γείωσης (0V) και συγκεκριμένα ως 2V. Αντίστοιχα για PWELL μπορεί να εφαρμοστεί πόλωση εώς -2V. Το όριο αυτό προέρχεται από περιορισμούς στη μοντελοποίηση της τεχνολογίας και όχι από διάσπαση κάποιας PN επαφής. 
+Η ευθεία πόλωση σώματος δουλεύει σε αντιστοιχία με το δυναμικό πύλης, δηλαδή όταν το δυναμικό στην πύλη N-καναλιού αυξηθεί για να ενεργοποιήσει το τρανζίστορ, τότε αύξηση στη πόλωση σώματος (Back Gate Bias) θα προκαλέσει ακόμα πιο δυνατή οδήγηση του τρανζίστορ και μείωση του δυναμικού $V_t$. 
+
+\begin{figure}[h]
+	\begin{centering}
+		\includegraphics[width=0.56\textwidth]{\ChapterPath/assets/convwell_nfet-pfet}
+		\par\end{centering}
+	\caption{\label{fig:TECH_bias_adv_3b} Πόλωση στοιχείου N-καναλιού σε NWELL και P-καναλιού σε PWELL, δηλαδή Conventional Well συσκευών.}
+\end{figure}
+
+Στη αντίθετη περίπτωση των Conventional Well, δηλαδή της ανάστροφης πόλωσης, γίνεται χρήση αρχιτεκτονικής παρόμοιας με τα Bulk CMOS: 
+συσκευές Ν καναλιού σε πηγάδι PWELL και P καναλιού σε NWELL. 
+Για τα τρανζίστορ N καναλιού στο Back Gate δεν μπορεί να εφαρμοστεί δυναμικό χαμηλότερο της γείωσης (0V) και υψηλότερο των 2V, ενώ για τα P καναλιού το δυναμικό σώματος περιορίζεται στο εύρος -2V ως 0V. Όπως προηγουμένως, τα όρια $\pm 2V$ προέρχονται από το χαρακτηρισμό/μοντελοποίηση των στοιχείων και όχι από το όριο διάσπασης.
+Η πόλωση Back Gate δρα αντίστροφα του δυναμικού πύλης: αύξηση της πόλωσης ελαττώνει την οδήγηση του τρανζίστορ, δηλαδή αυξάνει το $V_t$ και μειώνει την καταναλισκόμενη ισχύ.
+
+
+
+
+
+
+
+\section{Σχεδίαση για υψίσυχνες εφαρμογές}
+
+
+Παρακάτω παρουσιάζεται μια πειραματική μέτρηση σύζευξης NWELL με NWELL για RF τρανζίστορ. Εδώ μετράται ο συντελεστής $S_{12}$, δηλαδή η διάδοση σήματος από τον ακροδέκτη έγχυσης σε αυτόν της αίσθησης.
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.65\textwidth]{\ChapterPath/assets/RF_NW_to_NW_coupling_wDNWELL}
+		\par\end{centering}
+	\caption{\label{fig:TECH_RF_NW_to_NW_coupling_wDNWELL} Σύζευξη μεταξύ δυο NWELL εντός πηγαδιού DNWELL.}
+\end{figure}
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.68\textwidth]{\ChapterPath/assets/RF_NW_to_NW_coupling_woDNWELL}
+		\par\end{centering}
+	\caption{\label{fig:TECH_RF_NW_to_NW_coupling_woDNWELL} Σύζευξη μεταξύ δυο NWELL χωρίς πηγάδι DNWELL.}
+\end{figure}
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.63\textwidth]{\ChapterPath/assets/RF_NW_to_NW_coupling_wDNWELL_metric}
+		\par\end{centering}
+	\caption{\label{fig:TECH_RF_NW_to_NW_coupling_wDNWELL_metric} Σύζευξη μεταξύ δυο NWELL εντός πηγαδιού DNWELL, για εύρος συχνοτήτων και αποστάσεων.}
+\end{figure}
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.63\textwidth]{\ChapterPath/assets/RF_NW_to_NW_coupling_woDNWELL_metric}
+		\par\end{centering}
+	\caption{\label{fig:TECH_RF_NW_to_NW_coupling_woDNWELL_metric} Σύζευξη μεταξύ δυο NWELL χωρίς πηγάδι DNWELL, για εύρος συχνοτήτων και αποστάσεων.}
+\end{figure}
+Στα Σχήματα \ref{fig:TECH_RF_NW_to_NW_coupling_wDNWELL}, \ref{fig:TECH_RF_NW_to_NW_coupling_woDNWELL} παρουσιάζονται τοπολογίες με και χωρίς DNWELL αντίστοιχα\footnote{Πόλωση NWELL Tap: 0 ως -3V}. Στη συνέχεια, στα Σχήματα \ref{fig:TECH_RF_NW_to_NW_coupling_wDNWELL_metric}, \ref{fig:TECH_RF_NW_to_NW_coupling_woDNWELL_metric} καταγράφεται η σύζευξη μεταξύ των ακροδεκτών για μεγάλο εύρος συχνοτήτων και αποστάσεις $d=\{10,20,40\} \space \mu m$. Γίνεται αντιληπτό ότι το DNWELL μειώνει την αντίσταση υποβαθμίζοντας την απομόνωση μεταξύ των δυο NWELL, όπως επίσης ότι η απομόνωση αυτή είναι ανάλογη της απόστασης $d$.
+
+ 
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.66\textwidth]{\ChapterPath/assets/RF_Pp_to_NW_coupling_wDNWELL}
+		\par\end{centering}
+	\caption{\label{fig:TECH_RF_Pp_to_NW_coupling_wDNWELL} Σύζευξη μεταξύ NWELL και ακροδέκτη P+ εντός πηγαδιού DNWELL.}
+\end{figure}
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.63\textwidth]{\ChapterPath/assets/RF_Pp_to_NW_coupling_wDNWELL_metric}
+		\par\end{centering}
+	\caption{\label{fig:TECH_RF_Pp_to_NW_coupling_wDNWELL_metric} Σύζευξη μεταξύ NWELL και ακροδέκτη P+ εντός πηγαδιού DNWELL, για εύρος συχνοτήτων και αποστάσεων.}
+\end{figure}
+Στα Σχήματα \ref{fig:TECH_RF_Pp_to_NW_coupling_wDNWELL}, \ref{fig:TECH_RF_Pp_to_NW_coupling_wDNWELL_metric} παρουσιάζεται αντίστοιχα πειραματική μέτρηση της σύζευξης μεταξύ P+ και NWELL ακροδέκτη\footnote{Πόλωση NWELL Tap: 0V, Πόλωση P+ Tap: 0 ως -3V.}. Όπως προηγουμένως, η μεγαλύτερη απόσταση μεταξύ θυρών επιφέρει ανάλογη βελτίωση στην απομόνωσή τους. Ωστόσο παρατηρείται η ακόλουθη σημαντική διαφορά: σε χαμηλές συχνότητες μετράται καλή απομόνωση καθώς η ανάστροφα πολωμένη δίοδος (από το PWELL tap στο NWELL tap) αποκόπτει το σήμα. Κατά την αύξηση της συχνότητας τους σήματος, η δίοδος αυτή παύει πλέον να αποκόπτει το σήμα επαρκώς, λειτουργώντας πλέον ως απλή αντίσταση και παράγοντας απώλειες απομόνωσης (isolation losses).
+
+
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.67\textwidth]{\ChapterPath/assets/RF_PW_to_NW_coupling_wDNWELL}
+		\par\end{centering}
+	\caption{\label{fig:TECH_RF_PW_to_NW_coupling_wDNWELL} Σύζευξη μεταξύ NWELL και PWELL εντός πηγαδιού DNWELL.}
+\end{figure}
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.615\textwidth]{\ChapterPath/assets/RF_PW_to_NW_coupling_wDNWELL_metric}
+		\par\end{centering}
+	\caption{\label{fig:TECH_RF_PW_to_NW_coupling_wDNWELL_metric} Σύζευξη μεταξύ NWELL και PWELL εντός πηγαδιού DNWELL, για εύρος συχνοτήτων και αποστάσεων.}
+\end{figure}
+Στη συνέχεια, στη περίπτωση των Σχημάτων \ref{fig:TECH_RF_PW_to_NW_coupling_wDNWELL}, \ref{fig:TECH_RF_PW_to_NW_coupling_wDNWELL_metric} παρουσιάζεται πειραματική μέτρηση απομόνωσης σήματος από PWELL σε NWELL ακροδέκτη \footnote{Πόλωση NWELL Tap: 0V, Πόλωση P+ Tap: 0 ως -3V.}. Φυσικά είναι αναμενόμενο ότι η απόσταση μεταξύ ακροδεκτών ρυθμίζει την απομόνωση μεταξύ θυρών, όπως επίσης η δίοδος μεταξύ PWELL και NWELL είναι ανάστροφα πολωμένη και αποκόπτει το σήμα μόνο εώς μια μέγιστη συχνότητα. Η δίοδος αυτή, ωστόσο, είναι πιο αποτελεσματική στην απομόνωση του σήματος και ο δείκτης $S_{12}$ παρουσιάζεται σημαντικά μειωμένος, σε σχέση με τη χρήση P+ ακροδέκτη χωρίς PWELL.
+
+
+%\afterpage{\clearpage}
+%\clearpage
+
+\section{Τεχνικές Αναλογικής Σχεδίασης}
+
+\subsection{Πόλωση}
+
+Γίνεται εύκολα αντιληπτό ότι η πόλωση σώματος (Back Gate Bias) προσδίδει θετικά χαρακτηριστικά ως προς τη σχεδίαση, όπως μείωση της επιφάνειας ολοκλήρωσης και της καταναλισκόμενης ισχύος. Επίσης, μπορεί να επιτευχθεί ρύθμιση της αποδοτικότητας, του εύρους ζώνης, της υστέρησης σήματος, κ.α. Στην ευθεία πόλωση (Forward Back Gate Bias) για NFETs και PFETs μειώνεται το δυναμικό $V_t$, αυξάνεται η διαγωγιμότητα $G_m$, και μπορεί να μειωθεί η επιφάνεια ολοκλήρωσης με σταθερή την αποδοτικότητά τους. Αντίστοιχα στην ανάστροφη πόλωση (Reverse Back Gate Bias) επιτυγχάνεται η σχεδίαση τρανζίστορ περιορισμένης ισχύος και ως αποτέλεσμα μειωμένης διαρροής και ρευμάτων πόλωσης.
+Έτσι η τεχνολογία προσδίδει στον σχεδιαστή ένα επιπλέον εργαλείο-πρόβλημα: την αντιστάθμιση απόδοσης, ενέργειας και επιφάνειας με χρήση της πόλωσης.
+
+
+\begin{table}
+	\centering
+	\caption{Τυπικές χρήσεις πόλωσης στην τεχνολογία 22FDX, ανά παράμετρο προς βελτίωση.}
+	\label{tab:TECH_Bias_Choises}
+	\begin{tabularx}{\textwidth}{XXX}
+		\toprule
+		\addlinespace[3pt]
+		Παράμετροι & Πλεονεκτήματα & Τυπικά παραδείγματα κυκλωμάτων \\ 
+		\addlinespace[2pt]
+		\midrule
+		\addlinespace[2pt]
+		\addlinespace[5pt]
+		
+		\vspace{0.01pt}
+		IDsat / Ion / Ioff 	& 
+%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+%			\item[] Dynamically adjusting logic time delay, rise/fall time, clock speed, area.  
+%			\item[] Dynamic power vs. performance tradeoff 
+%		\end{itemize}  & 
+%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+%			\item[] Digital logic and signal processing
+%			\item[] Clock and LO buffer
+%			\item[] Rign Oscillator
+%			\item[] Time-to-Digital Converter (TDC)
+%			\item[] Delay line
+%			\item[] Inverter based -gm for VCO and DCO
+%		\end{itemize}
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item[] Δυναμική προσαρμογή της χρονικής υστέρησης σε λογικά συστήματα, του χρόνου ανόδου/καθόδου, της ταχύτητας ρολογιού, της επιφάνειας.  
+			\item[] Δυναμική αντιστάθμιση ισχύος έναντι απόδοσης.
+		\end{itemize} & 
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item[] Ψηφιακή λογική και επεξεργασία σήματος.
+			\item[] Ρυθμιστής ρολογιού και LO.
+			\item[] Ταλαντωτής (Ring Osc.).
+			\item[] Μετατροπέας χρόνου σε ψηφιακό (Time-to-Digital Conv. - TDC).
+			\item[] Γραμμή καθυστέρησης (Delay Line).
+			\item[] -gm βασισμένο σε αντιστροφείς, για VCO ή DCO.
+		\end{itemize}
+		\\
+		
+		\addlinespace[1pt]
+		
+		\vspace{0.01pt}
+		Ron / Roff 	& 
+%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+%			\item[] Switches with low ON and high OFF resistance.  
+%		\end{itemize}  & 
+%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+%			\item Programmable capacitor such (e.g. C-DAC),
+%			\item Programmable DCO capacitor array,
+%			\item Programmable resistor such as R-String-DAC and R2R-DAC,
+%			\item Switched-capacitor sampling network for ADC,
+%			\item Switched-capacitor filter,
+%			\item Switched-capacitor charge-pump generator,
+%			\item Passive mixer,
+%			\item Chopper stabilization circuit,
+%			\item Switches and analog MUXes,
+%			\item RF Front-End Switch.
+%		\end{itemize}
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item[] Διακόπτες με χαμηλή αντίσταση ON και υψηλή OFF.  
+		\end{itemize} & 
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item Ρυθμιζόμενος πυκνωτής (π.χ. C-DAC).
+			\item Ρυθμιζόμενη συστοιχία πυκνωτών DCO.
+			\item Ρυθμιζόμενη αντίσταση, (π.χ. R-String-DAC, R2R-DAC).
+			\item Δίκτυο δειγματοληψίας πυκνωτή (Switched Cap.) για ADC.
+			\item Φίλτρο πυκνωτή (Switched Cap.).
+		\end{itemize}
+		\\
+		
+		\addlinespace[4pt]
+		
+		\bottomrule
+	\end{tabularx}
+\end{table}
+\begin{table*}
+	
+	%\caption{Τυπικές χρήσεις πόλωσης στην τεχνολογία 22FDX, ανά παράμετρο προς βελτίωση (συνέχεια).}
+	%\label{tab:TECH_Bias_Choises}
+	(Συνέχεια Πίνακα \ref{tab:TECH_Bias_Choises})
+	\centering
+	\begin{tabularx}{\textwidth}{XXX}
+		\toprule
+		\addlinespace[3pt]
+		Παράμετροι & Πλεονεκτήματα & Τυπικά παραδείγματα κυκλωμάτων \\ 
+		\addlinespace[2pt]
+		\midrule
+		\addlinespace[2pt]
+		\addlinespace[5pt]
+		
+		
+		\vspace{0.01pt}
+		& 
+		%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			%			\item[] Switches with low ON and high OFF resistance.  
+			%		\end{itemize}  & 
+		%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			%			\item Programmable capacitor such (e.g. C-DAC),
+			%			\item Programmable DCO capacitor array,
+			%			\item Programmable resistor such as R-String-DAC and R2R-DAC,
+			%			\item Switched-capacitor sampling network for ADC,
+			%			\item Switched-capacitor filter,
+			%			\item Switched-capacitor charge-pump generator,
+			%			\item Passive mixer,
+			%			\item Chopper stabilization circuit,
+			%			\item Switches and analog MUXes,
+			%			\item RF Front-End Switch.
+			%		\end{itemize}
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+		\end{itemize} & 
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item Γεννήτρια αντλίας φόρτισης πυκνωτή (Switched Cap.).
+			\item Παθητικός RF μίκτης.
+			\item Κύκλωμα σταθεροποίησης Chopper.
+			\item Διακόπτες και αναλογικοί MUX.
+			\item RF Front-End διακόπτης.
+		\end{itemize}
+		\\
+		
+		\addlinespace[1pt]
+		
+		\vspace{0.01pt}
+		%		DC operating point adjustment 	& 
+		%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			%			\item Optimizing headroom,
+			%			\item Common-Mode. 
+			%		\end{itemize}  & 
+		%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			%			\item Linear regulator,
+			%			\item Amplifier,
+			%			\item Comparator,
+			%			\item Current mirror/source/sink.
+			%		\end{itemize}
+		Ρύθμιση DC (operating point) & 
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item Βελτιστοποίηση Common-Mode. 
+		\end{itemize} & 
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item Γραμμικός ρυθμιστής (Linear Regulator).
+			\item Ενισχυτής.
+			\item Συγκριτής.
+			\item Καθρέπτης/Πηγή ρεύματος.
+		\end{itemize}
+		\\
+		
+		\addlinespace[1pt]
+		
+		
+		\vspace{0.01pt}
+		GM / GM-C	& 
+		%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			%			\item Calibration and tuning.
+			%		\end{itemize}  & 
+		%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			%			\item Inverter-based gm/C filter,
+			%			\item Inverter-based gm/C sigma-delta modulator.
+			%		\end{itemize}
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item Βαθμονόμηση και ρύθμιση.
+		\end{itemize} & 
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item Φίλτρο gm/C με αντιστροφείς.
+			\item Διαμορφωτής ΣΔ gm/C με αντιστροφείς.
+		\end{itemize}
+		\\
+		
+		\addlinespace[1pt]
+		
+		\vspace{0.01pt}
+		%		Mismatch	& 
+		%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			%			\item Offset correction.
+			%		\end{itemize}  & 
+		%		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			%			\item Comparator and amplifier,
+			%			\item Mixer and amplifier HD2.
+			%		\end{itemize}
+		Αντιστοιχία (Mismatch) & 
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item Διόρθωση μετατόπισης (offset).
+		\end{itemize} & 
+		\begin{itemize}[leftmargin=0pt,label={},topsep=0pt]
+			\item Συγκριτής και ενισχυτής.
+			\item Μίκτης και ενισχυτής HD2.
+		\end{itemize}
+		\\
+		
+		\addlinespace[4pt]
+		
+		\bottomrule
+	\end{tabularx}
+\end{table*}
+
+
+Επισημαίνεται ότι είναι δυνατή η χρήση των δυο πολώσεων (FBGB, RBGB) στο ίδιο ολοκληρωμένο κύκλωμα, ωστόσο η επιλογή για κάθε τρανζίστορ προτείνεται να γίνει στην αρχική φάση σχεδίασης, καθώς εναλλαγή τους έχει ως αποτέλεσμα σημαντική μεταβολή στα χαρακτηριστικά του κυκλώματος και πιθανόν να οδηγήσει σε επανασχεδίαση μεγάλου μέρους του συστήματος.
+Τα επιπλέον βήματα της σχεδίασης είναι τα εξής:
+\begin{itemize}
+	\item απόφαση χρήσης ευθείας (FBGB) ή ανάστροφης (RBGB) πόλωσης ανά τρανζίστορ, σύμφωνα με λειτουργικές απαιτήσεις,
+	\item επιλογή δυναμικών για την πόλωση (bulk potentials), σύμφωνα με σχεδιαστικές απαιτήσεις,
+	\item επαλήθευση της μη ύπαρξης ευθείας πόλωσης στις διόδους πηγαδιών, που μπορούν να προκύψουν λόγω πόλωσης (FBGB, RBGB).
+\end{itemize}
+Οι σημαντικότερες περιπτώσεις χρήσης πόλωσης παρουσιάζονται στον πίνακα \ref{tab:TECH_Bias_Choises}. 
+
+Εκτός της τυπικής στατικής πόλωσης, η οποία επιλέγεται κατά τη σχεδίαση του κυκλώματος για να ρυθμίσει το κατώφλι της διάταξης ($V_t$), πρόσφατη βιβλιογραφία\cite{22nm_good_ending} εξετάζει και την περίπτωση εφαρμογής σήματος στο Back Gate Bias. Το εναλλασσόμενο αυτό σήμα εφαρμόζεται μέσω path υψηλής ειδικής αντίστασης, μειώνοντας την χωρητικότητα υποδοχής/πηγής.
+
+%{\linewidth}{@{}>{\mdseries}X @{\hspace{.5em}} XX}
+
+\subsection{Πηγάδια S3/T3}
+
+
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.29\textwidth]{\ChapterPath/assets/layout_compaction_circuit}
+		\par\end{centering}
+	\caption{\label{fig:TECH_layout_compaction_circuit} Σχηματικό αντιστροφέα SLVT.}
+\end{figure}
+
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=1\textwidth]{\ChapterPath/assets/layout_compaction_profile}
+		\par\end{centering}
+	\caption{\label{fig:TECH_layout_compaction_profile} Τομή φυσικού σχεδίου αντιστροφέα SLVT.}
+\end{figure}
+
+Στο Σχήμα \ref{fig:TECH_layout_compaction_profile} παρουσιάζεται το προφίλ μιας κοινής τοπολογίας αντιστροφέα του σχήματος \ref{fig:TECH_layout_compaction_circuit}. Στο συγκεκριιμένο παράδειγμα, όπως είναι λογικό για την κατασκευή αντιστροφέα δυνατής οδήγησης, γίνεται χρήση SLVTPFET για το Pull-Up Network και SLVTNFET για το Pull-Down. Όπως έχει εξηγηθεί, στη συγκεκριμένη τεχνολογία το SLVTPFET θα τοποθετηθεί εντός απομονωμένου - από το υπόστρωμα και λοιπές P εγχύσεις - PWELL, για να είναι δυνατή η εφαρμογή ξεχωριστής πόλωσης στο πηγάδι του. Αντίστοιχα το SLVTNFET τοποθετείται εντός NWELL με τη δική του πόλωση.
+
+Επισημαίνεται ότι:
+\begin{itemize}
+	\item To δυναμικό NWELL πρέπει να είναι μικρότερο ή ίσο του δυναμικού PWELL ($VBBN \leq VBBP$), για να αποφευχθεί η ορθή πόλωση της διόδου μεταξύ NWELL και PWELL,
+	\item To δυναμικό του NWELL πρέπει να είναι μεγαλύτερο του δυναμικού υποστρώματος ($VBBN \geq 0$), για να αποφευχθεί ορθή πόλωση της διόδου μεταξύ NWELL και PSUB,
+\end{itemize}
+Κατά τη σχεδίαση και προσομοίωση ενός κυκλώματος, είναι χρήσιμη η τοποθέτηση αυτών των διόδων στους κατάλληλους ακροδέκτες, για εύρεση τυχόν λάθος πολώσεων.
+
+Εδώ, έχοντας ως σκοπό τον περιορισμό της επιφάνειας ολοκλήρωσης, τα NFET και PFET τοποθετούνται έχοντας ένα κοινό DNWELL. Το βαθύ αυτό πηγάδι κατασκευάζεται από ένα N-στρώμα S3 ή T3. Οι χρήσεις τους είναι οι ακόλουθες:
+\begin{itemize}
+	\item S3: Για υψηλή διαφορά δυναμικού πόλωσης (Back Gate Bias). Επιβάλει ελαστικές απαιτήσεις αποστάσεων, επομένως προτείνεται για συμπαγείς τοπολογίες.
+	\item Τ3: Για υψηλή απομόνωση πηγαδιού από θόρυβο. Απαιτεί την χρήση μεγαλύτερων αποστάσεων μεταξύ T3 εγχύσεων, επομένως δεν προτείνεται για συμπαγή κυκλώματα.
+\end{itemize}
+Το DNWELL σε κάθε περίπτωση δρα ως βραχυκύκλωμα των πηγαδιών NWELL, επομένως απαιτείται προσοχή στην πόλωση των αντίστοιχων τρανζίστορ. 
+
+
+
+\section{Πυκνωτές}
+
+Οι πυκνωτές είναι εάν αναπόσπαστο κομμάτι οποιασδήποτε αναλογικής τοπολογίας. Έτσι, η τεχνολογία 22FDX προσφέρει
+ένα σύνολο πυκνωτών για μεγάλο εύρος δυναμικών τροφοδοσίας και πυκνοτήτων.
+Σημαντικότερες και πιο συνήθεις τοπολογίες αποτελούν οι APMOM/MOM.
+Συγκεκριμένα, 
+
+
+\begin{figure}
+	\begin{centering}
+		\includegraphics[width=0.72\textwidth]{\ChapterPath/assets/captypes_mom_apmom_vnncap}
+		\par\end{centering}
+	\caption{\label{fig:TECH_captypes_apmom_mom_vncap}Συνήθεις τύποι πυκνωτών διαθέσιμοι στην τεχνολογία 22FDX.}
+\end{figure}
+
+
+\subsection{MOM}
+
+Οι πυκνωτές MOM χρησιμοποιούν μια μόνωση οξειδίου μετάλλου αντί για την πλήρη μόνωση. Αυτοί οι πυκνωτές προσφέρουν καλή χωρητικότητα και είναι κατάλληλοι για εφαρμογές όπου απαιτείται χαμηλή κατανάλωση ισχύος.
+
+Είναι κατάλληλοι για τοπολογίες όπου απαιτείται μικρότερη χωρητικότητα και μειωμένες απώλειες Joule. Συχνά χρησιμοποιούνται σε ολοκληρωμένα κυκλώματα όπου ο χώρος είναι περιορισμένος.
+
+H μικρότερη επιφάνειά τους ανά μονάδα χωρητικότητας, τους καθιστά οικονομικότερους συγκριτικά με τους πυκνωτές MIM.
+
+Στους MOM η πρόσθετη στρώση οξειδίου μετάλλου μεταξύ των μεταλλικών φύλλων λειτουργεί ως μόνωση και παρουσιάζει μεγαλύτερη αντίσταση στο ηλεκτρικό πεδίο. Κατά συνέπεια, σε υψηλές συχνότητες αντιμετωπίζουν αυξημένες απώλειες Joule λόγω της αντίστασης της μόνωσης. Το φαινόμενο αυτό είναι περιορισμένο στους πυκνωτές \textenglish{MIM}, όπου η μόνωση είναι συνήθως μια μη-αγώγιμη ουσία\footnote{Συνήθως ως μονωτές χρησιμοποιούνται διοξείδιο πυριτίου ($SiO_2$) ή διοξείδιο αλουμινίου ($Al_2O_3$).}. Αυτό καθιστά τους πυκνωτές \textenglish{MIM} προτιμητέο επιλογή για εφαρμογές σε υψηλές συχνότητες όπου οι απώλειες πρέπει να παραμένουν χαμηλές.
+
+Αυτά τα cells πυκνωτών παρέχουν στο σχεδιαστή τη δυνατότητα να προσαρμόσουν τις εφαρμογές τους στις απαιτήσεις τους όσον αφορά τη χωρητικότητα, την απόδοση τους.
+
+
+
+%\section{Πυκνωτές}
+%
+%Εντός του PDK της 22FDX βρίσκονται διάφορα είδη πυκνωτών ως έτοιμες συσκευές (cells), τα οποία προσφέρουν ευελιξία και ταχύτητα στη σχεδίαση. Ακολουθεί μια σύντομη παρουσίαση των διαθέσιμων cell σε αυτή την τεχνολογία:
+%
+%\subsection{MIM}
+%
+%Οι πυκνωτές MIM χρησιμοποιούν μεταλλικές πλάκες ως ηλεκτρόδια και μια μη-αγώγιμη μόνωση μεταξύ τους. Είναι ιδανικοί για υψηλής χωρητικότητας εφαρμογές. Aποτελούν σημαντικά εξαρτήματα στην τεχνολογία των ηλεκτρονικών κυκλωμάτων και χρησιμοποιούνται ευρέως σε πολλές εφαρμογές. 
+%
+%%Παρακάτω, περιγράφονται χρήσεις, πλεονεκτήματα και αναζητούνται αδυναμίες για κάθε είδος πυκνωτή.
+%
+%Βρίσκουν χρήση κυρίως σε εφαρμογές υψηλής συχνότητας και ισχύος, όπως στα κυκλώματα ραδιοσυχνοτήτων (RF) και ασύρματων επικοινωνιών. Επίσης, είναι κοινά σε κυκλώματα μνήμης και εφαρμογές αισθητήρων.
+%
+%Προσφέρουν υψηλή χωρητικότητα και εξαιρετική απόδοση σε υψηλές συχνότητες. Έχουν χαμηλή απώλεια ενέργειας, υψηλή αντοχή στη θερμότητα και είναι κατάλληλοι για εφαρμογές που απαιτούν ακρίβεια και σταθερότητα.
+%
+%Ωστόσο είναι συνήθως μεγαλύτεροι σε μέγεθος από άλλους τύπους πυκνωτών και ως εκ τούτου απαιτούν μεγαλύτερη επιφάνεια. Αυτό έχει άμεσο αντίκτυπο στο κόστος τους ανά μονάδα χωρητικότητας σε σύγκριση με άλλους τύπους πυκνωτών.
+%
+%\subsection{Varactor}
+%
+%Οι varactors χρησιμοποιούνται σε τοπολογίες όπου απαιτείται αναλογική ρύθμιση της χωρητικότητας τους με εφαρμογή κατάλληλου δυναμικού. Συναντώνται κυρίως σε εφαρμογές RF όπου απαιτείται προσαρμογή της συχνότητας, και θα βρουν χρήση στο πλαίσιο της συγκεκριμένης εργασίας στη σχεδίαση του ρυθμιζόμενου ταλαντωτή.
+%
+%\subsection{MOM}
+%
+%Οι πυκνωτές MOM χρησιμοποιούν μια μόνωση οξειδίου μετάλλου αντί για την πλήρη μόνωση. Αυτοί οι πυκνωτές προσφέρουν καλή χωρητικότητα και είναι κατάλληλοι για εφαρμογές όπου απαιτείται χαμηλή κατανάλωση ισχύος.
+%
+%Είναι κατάλληλοι για τοπολογίες όπου απαιτείται μικρότερη χωρητικότητα και μειωμένες απώλειες Joule. Συχνά χρησιμοποιούνται σε ολοκληρωμένα κυκλώματα όπου ο χώρος είναι περιορισμένος.
+%
+%H μικρότερη επιφάνειά τους ανά μονάδα χωρητικότητας, τους καθιστά οικονομικότερους συγκριτικά με τους πυκνωτές MIM.
+%
+%Στους MOM η πρόσθετη στρώση οξειδίου μετάλλου μεταξύ των μεταλλικών φύλλων λειτουργεί ως μόνωση και παρουσιάζει μεγαλύτερη αντίσταση στο ηλεκτρικό πεδίο. Κατά συνέπεια, σε υψηλές συχνότητες αντιμετωπίζουν αυξημένες απώλειες Joule λόγω της αντίστασης της μόνωσης. Το φαινόμενο αυτό είναι περιορισμένο στους πυκνωτές \textenglish{MIM}, όπου η μόνωση είναι συνήθως μια μη-αγώγιμη ουσία\footnote{Συνήθως ως μονωτές χρησιμοποιούνται διοξείδιο πυριτίου ($SiO_2$) ή διοξείδιο αλουμινίου ($Al_2O_3$).}. Αυτό καθιστά τους πυκνωτές \textenglish{MIM} προτιμητέο επιλογή για εφαρμογές σε υψηλές συχνότητες όπου οι απώλειες πρέπει να παραμένουν χαμηλές.
+%
+%Αυτά τα cells πυκνωτών παρέχουν στο σχεδιαστή τη δυνατότητα να προσαρμόσουν τις εφαρμογές τους στις απαιτήσεις τους όσον αφορά τη χωρητικότητα, την απόδοση τους.
+%
+%\section{Πηνία}
+%
+%Κατά τη σχεδίαση κυκλωμάτων RF (ραδιοσυχνοτήτων) και MMW ()χιλιοστομετρικών κυμάτων), τα πηνία διαδραματίζουν καθοριστικό ρόλο στην επίτευξη προσαρμογής και διασύνδεσης (interfacing) μεταξύ κυκλωμάτων. Mία πληθώρα cells πηνίων ειδικά σχεδιασμένων για αυτές τις εφαρμογές μπορεί να βρεθεί στο PDK της 22FDX. Παρακάτω παρουσιάζονται οι πιο σημαντικοί τύποι.
+%
+%\subsection{Balun}
+%
+%Τα Baluns (\textbf{bal}anced-to-\textbf{un}balanced) είναι συσκευές που επιτρέπουν τη διασύνδεση ισορροπημένων και μη ισορροπημένων γραμμών, απορρίπτοντας το Common-Mode σήμα τους, και χωρίς να διαταράσσεται η διάταξη της σύνθετης αντίστασής τους. 
+%
+%\subsection{Μετασχηματιστής}
+%
+%Οι κυψέλες μετασχηματιστών στο 22FDX PDK είναι σχολαστικά σχεδιασμένες ώστε να ανταποκρίνονται στις αυστηρές απαιτήσεις των κυκλωμάτων υψηλής συχνότητας. Προσφέρουν ανώτερες επιδόσεις όσον αφορά την απώλεια παρεμβολής, το εύρος ζώνης και τις δυνατότητες χειρισμού ισχύος. Αυτοί οι μετασχηματιστές επιτρέπουν τον αποτελεσματικό μετασχηματισμό σύνθετης αντίστασης, επιτρέποντας στα σήματα RF και χιλιοστομετρικών κυμάτων να διασυνδέονται απρόσκοπτα με διάφορα στοιχεία του κυκλώματος, όπως κεραίες, ενισχυτές και φίλτρα.
+%
+% Αυτή η προσαρμοστικότητα είναι ζωτικής σημασίας για την επίτευξη βέλτιστων επιδόσεων και την ικανοποίηση των συνεχώς εξελισσόμενων απαιτήσεων των συστημάτων ασύρματης επικοινωνίας, των εφαρμογών ραντάρ και άλλων σχεδίων υψηλής συχνότητας.
+%
+%Επιπλέον, τα εξαιρετικά χαρακτηριστικά χαμηλής κατανάλωσης ενέργειας της τεχνολογίας 22FDX την καθιστούν κατάλληλη για συσκευές RF και χιλιοστομετρικών κυμάτων που λειτουργούν με μπαταρίες και είναι ενεργειακά αποδοτικές. Οι κυψέλες μετασχηματιστών αυτής της διαδικασίας προσφέρουν ισορροπία μεταξύ υψηλής απόδοσης και χαμηλής κατανάλωσης ενέργειας, καθιστώντας τις ιδανικές για συστήματα ασύρματης επικοινωνίας επόμενης γενιάς, συσκευές IoT και όχι μόνο.
+%
+%Συμπερασματικά, τα κύτταρα μετασχηματιστών στο 22FDX PDK παρέχουν τα απαραίτητα δομικά στοιχεία για τους σχεδιαστές RF και χιλιοστομετρικών κυμάτων για τη δημιουργία ολοκληρωμένων κυκλωμάτων υψηλής απόδοσης και χαμηλής κατανάλωσης ενέργειας. Η ευελιξία, η επεκτασιμότητα και τα εξαιρετικά χαρακτηριστικά επιδόσεων που διαθέτουν, τα καθιστούν απαραίτητα για ένα ευρύ φάσμα εφαρμογών στον κόσμο των ηλεκτρονικών υψηλής συχνότητας.
+%
+%
+%
+
+
+\section{Ανακεφαλαίωση}
+
+Η τεχνολογία αποτελεί ένα σύνολο από εργαλεία, με σκοπό την σχεδίαση κυκλωμάτων ευρείας χρήσης: από συστήματα εξαιρετικά χαμηλής καταναλισκόμενης ισχύος, εώς και αυτά που ωθούν τα όρια της τεχνολογίας.
+Από απλά DC κυκλώματα, στα RF και mmWave έχει αποδειχθεί η δυνατότητα βελτίωσης σύγχρονων τοπολογιών με πειραματικά αποτελέσματα διαθέσιμα στη βιβλιογραφία.
+
+Στα επόμενα κεφάλαια θα γίνει χρήση της θεωρητικής αυτής γνώσης, για την παραγωγή συστημάτων και θα σχολιαστούν οποιεσδήποτε βελτιώσεις επιφέρει μια τεχνολογία FD-SOI αναλυτικά.
